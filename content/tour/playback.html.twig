@@ -1,0 +1,89 @@
+{% block title %}HTML5 / Flash Player{% endblock %}
+{% extends "templates/template.html.twig" %}
+{% block content %}
+<div class='container' >
+<div class='container' >
+<div style='text-align:center'>
+<h2>It's your own video backend</h2>
+<p>When you need something beyond just Vimeo and YouTube.</p>
+<div class="btn-group">
+  <button class="btn active"><a href=''>Playback</a></button>
+  <button class="btn"><a href='/tour/upload'>Upload</a></button>
+  <button class="btn"><a href='/tour/record'>Record</a></button>
+</div>
+</div>
+</div>
+<div class="container marketing">
+
+<div class='container' style='width:460px'>
+<hr>
+<div class='container'>
+       <div class='meh' style='float:left'>
+        <h2>Cross browser support</h2>
+        <p>
+Our playback works across all browsers including IE8. We handle the playback in HTML5 and fallback automatically to Flash and Silverlight when needed. We’ll make sure our platform is up to date and maintain it to work with all future browsers.        </p>
+    </div>
+    <div class='meh' style='float:left'>
+    	    </br></br>
+
+<!--        <img src='/assets/img/browser.png' />
+ -->    </div>
+
+</div>
+<hr>
+<div class='container'>
+
+    <div class='meh' style='float:left; '>
+        <h2>Optimized mobile experience</h2>
+        <p>
+            Encoding videos and optimizing for mobile playback isn’t easy. Our videos are optimized for mobile and we support playback on iOS, Android and Windows Phone.
+        </p>
+    </div>
+ <div class='meh' style='float:left'>
+<!--        <img src='/assets/img/devices.jpg' style='margin-left: 50px'/>
+ --></div></div>
+<hr>
+<div class='container'>
+    <div class='meh'  style="float:left">
+        <h2>Fully customizable</h2>
+        <p>
+			Don’t like the way the player looks and feels? Skin it however you like using CSS or choose between some of our pre-made skins.  </p>
+    </div>
+     <!-- <div class='meh' style="float:left">
+        <img src='assets/img/magic.png' />
+    </div> -->
+</div>
+<hr>
+<div class='container'>
+
+    <div class='meh' style='float:left; '>
+        <h2>RTMP streaming</h2>
+        <p>
+            RTMP allows your users to stream your videos without having to download the entire file. All your files can either be played back through progressive download or streaming. You don’t have to do anything extra besides turning on a flag.
+        </p>
+    </div>
+ <div class='meh' style='float:left'>
+<!--        <img src='/assets/img/RTMPcloud.png'  style='margin-left: 50px'/>
+ -->    </div>
+</div>
+<hr>
+<div class='container'>
+    <div class='meh'  style="float:left">
+        <h2>HD Compatible</h2>
+        <p>
+			Framebase supports HD videos, with playback for resolutions up to 1080p.         </p>
+    </div>
+      <div class='meh' style='float:left'>
+<!--        <img src='/assets/img/hd.png'  style='margin-left: 80px'/>
+ -->    </div>
+</div>
+<hr>
+</div>
+    <form method='post' action='/register/waitlist.html'>
+    <input type='text' name='email' placeholder='your@email.com' />
+    <button id='signup-btn' class="btn-new">Get an invite</button>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

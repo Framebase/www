@@ -1,0 +1,27 @@
+{% block title %}Register{% endblock %}
+{% extends "templates/template.html.twig" %}
+
+{% block content %}
+<div class="container">
+    <div id="register" style="width: 375px; margin: auto;">
+        <h2 style='text-align:center'><strong>Sign Up</strong></h2>
+        <form action="" id="contactForm" method="post">
+            {% if not email %}
+                <input placeholder='Email' type="text" value="" maxlength="100" class="input-large span4" name="email" id="subject">
+            {% else %}
+                <input type="hidden" name="email" value="{{email}}" />
+                <p>You're almost ready to get started! We just need your company name and a password. You can change them later.</p>
+            {% endif %}
+            <p>
+                All plans come with a free trial credit. We won't ask for your billing information until your trial
+                ends. If you're not satisfied, you can export your data at any time.
+            </p>
+            <input type="text" placeholder="Company Name" maxlength="100" class="input-large span4" name="company_name" />
+            <input placeholder='Password' type="password" value="" maxlength="100" class="input-large span4" name="password" id="subject">
+            <input placeholder='Confirm Password' type="password" value="" maxlength="100" class="input-large span4" name="password_confirm" id="subject">
+            <input type="submit" value="Submit" class="btn btn-primary btn-large" style='float:right' data-loading-text="Loading...">
+        </form>
+
+    </div>
+</div>
+{% endblock %}

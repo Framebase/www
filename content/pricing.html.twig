@@ -1,0 +1,40 @@
+{% block title %}Pricing{% endblock %}
+{% extends "templates/template.html.twig" %}
+
+{% block content %}
+    <div role="main" class="main">
+                {{ widgets.top([
+                    {'name': 'Features'}
+                ], 'Pricing Table') }}
+        <div class="container">
+            <h3 class="short"><strong>Pricing</strong> Plans</h3>
+            <div class="row" style='margin: 0 auto; width: 600px'>
+                <div class="pricing-table" >
+                    <div class="span3">
+                        <div class="plan">
+                            <h3>Pay As You Go<span><i class='icon icon-money'></i></span></h3>
+                            <a class="btn btn-large btn-primary" href="/register">Sign up</a>
+                            <ul>
+                                <li><b>$0.002</b> Per Minute Playback</li>
+                                <li><b>$0.05</b> Per Minute Upload</li>
+                                <li><b>Email & Phone</b> Support</li>
+                                <li><b>CSS</b> Customizable</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="plan">
+                            <h3>200k+ mins / month<span><i class='icon icon-phone'></i></span></h3>
+                            <a class="btn btn-large btn-primary" href="mailto:sales@framebase.io">Contact Us</a>
+                            <ul>
+                                <li><b>Custom</b> Per Playback Plan</li>
+                                <li><b>Custom</b> Per Upload Plan</li>
+                                <li><b>24/7</b> Support</li>
+                                <li><b>CSS</b> Customizable</li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

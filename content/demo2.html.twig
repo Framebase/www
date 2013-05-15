@@ -1,0 +1,107 @@
+
+<html>
+  <head>
+    <link href="//djtagfocfldiq.cloudfront.net/assets/application-0d6230d995fcf05c103824f4738ae49f.css" media="screen" rel="stylesheet" type="text/css" />
+    <style type="text/css" media="screen">
+      body {
+        background-color: #fff;
+        overflow: hidden !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        float: left !important;
+        clear: both !important;
+        width: 100% !important;
+        /*height: 100% !important;*/
+      }
+      input {
+        display: none;
+      }
+      .nav-tabs {
+        background-color: #eee;
+      }
+      #record {
+        background-color: #000;
+        height: 360px;
+        margin-top: -4px;
+      }
+      .fb_record_controls {
+        position: absolute !important;
+        bottom: 0 !important;
+      }
+      .fb_record_error {
+        background-color: #000;
+        padding-top: 50px;
+      }
+    </style>
+
+    <script src="//djtagfocfldiq.cloudfront.net/assets/application-47aa5fe4c351bd9687d4257f6208ebcf.js" type="text/javascript"></script>
+    <script src="//framebase.io/assets/framebase-js/framebase-nightly.js"></script>
+    <script>
+$(document).ready(function() {
+
+  function videoUploadSuccess(framebase_element) {
+    var framebase_object_id = $(framebase_element).attr('value');
+    window.parent.Populr.videoUploadSuccess(framebase_object_id, 16, 9);
+  }
+
+  function videoRecordSuccess(framebase_element) {
+    var framebase_object_id = $(framebase_element).find('input').attr('value');
+    window.parent.Populr.videoRecordSuccess(framebase_object_id, 4, 3);
+  }
+
+  function videoUploadError() {}
+  function videoRecordError() {}
+  function videoRecordingDiscarded() {}
+
+  framebase_init({
+                  token: 'fc3975e4793961fa714bc5eb88943a20f041ec13a18f74acadc073a00774e9ab',
+                  events: {
+                    record: {
+                      success: [
+                        function() {
+                          videoRecordSuccess(this);
+                        }
+                      ],
+                      error: [
+                        function() {
+                          videoRecordError(this);
+                        }
+                      ]
+                    },
+                    upload: {
+                      success: [
+                        function() {
+                          videoUploadSuccess(this);
+                        }
+                      ],
+                      error: [
+                        function() {
+                          videoUploadError(this);
+                        }
+                      ],
+                      record_discard: [
+                        function() {
+                          videoRecordingDiscarded(this);
+                        }
+                      ]
+                    }
+                  }
+                });
+});
+    </script>
+  </head>
+  <body>
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#upload" data-toggle="tab">Upload</a></li>
+      <li><a href="#record" data-toggle="tab">Record (experimental)</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="upload" class="tab-pane active">
+        <input type="framebase" data-skin="//populr.me/vendor/stylesheets/framebase_uploader.css" />
+      </div>
+      <div id="record" class="tab-pane">
+        <input type="framebase" record="true" width="400px" />
+      </div>
+    </div>
+  </body>
+</html>

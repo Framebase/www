@@ -1,0 +1,74 @@
+{% block title %}Upload Tour{% endblock %}
+{% extends "templates/template.html.twig" %}
+{% block content %}
+<div class='container' >
+<div class='container' >
+<div style='text-align:center'>
+<h2>It's your own video backend</h2>
+<p>When you need something beyond just Vimeo and YouTube.</p>
+<div class="btn-group">
+ <button class="btn"><a href='/tour/playback'>Playback</a></button>
+  <button class="btn active"><a href=''>Upload</a></button>
+  <button class="btn"><a href='/tour/record'>Record</a></button>
+</div>
+</div>
+</div>
+<div class="container marketing">
+<div class='container' style='width:460px'>
+<hr>
+<div class='container'>
+       <div class='meh' style='float:left'>
+        <h2>Transcoding</h2>
+        <p>All videos uploaded through Framebase are automatically transcoded. We support all the common video and audio formats.</p>
+    </div>
+    <div class='meh' style='float:left'>
+    	    </br></br>
+
+    </div>
+
+</div>
+<hr>
+<div class='container'>
+
+    <div class='meh' style='float:left; '>
+        <h2>Storage</h2>
+        <p>
+           Once uploaded, videos will be stored and hosted on our CDN. We're rolling out support to enable you to host on your own S3 bucket soon.
+        </p>
+    </div>
+  <div class='meh' style='float:left'>
+
+        </div>
+</div>
+<hr>
+<div class='container'>
+    <div class='meh'  style="float:left">
+        <h2>Content Delivery</h2>
+        <p> Don’t like the way the player looks and feels? Skin it however you like using CSS or choose between our offered skins. </p>
+    </div>
+     <!-- <div class='meh' style="float:left">
+        <img src='assets/img/magic.png' />
+    </div> -->
+</div>
+<hr>
+<div class='container'>
+
+    <div class='meh' style='float:left; '>
+        <h2>Transloading</h2>
+        <p>
+           Need to upload your videos to YouTube and Vimeo as well? Just upload on our service and we can distribute them across other services to create inbound links back to your website.
+        </p>
+    </div>
+ <div class='meh' style='float:left'>
+    </div>
+</div>
+<hr>
+</div>
+    <form method='post' action='/register/waitlist.html'>
+    <input type='text' name='email' placeholder='your@email.com' />
+    <button id='signup-btn' class="btn-new">Get an invite</button>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,231 @@
+{% block title %}Easiest way to add video{% endblock %}
+{% extends "templates/template.html.twig" %}
+
+{% block content %}
+            <div role="main" class="main">
+                <div id="content" class="content full">
+                    <div class="home-intro">
+                        <div class="container">
+
+                            <div class="row center" style='padding: 40px'>
+                                <div>
+                                    <h1 style='color:white; margin-bottom: 35px'>Framebase  <strong class="inverted">powers</strong> video features.</h1>
+                                    <p style='margin-top: -28px' class="featured lead">
+                                    The easiest way to add video to your app
+                                    </p>
+                                    <form method='post' action='/register/waitlist'>
+                                        <input id='invite-input' type="text" class="input-large span4" name="email" placeholder="your@email.com">
+                                        <button class="btn btn-large btn-primary" type="submit">Get Started For Free</button>
+                                    </form>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="container">
+                    <div class="home-concept">
+                        <div class="container">
+                        <div class="row featured-boxes">
+                        <div class="span4">
+                            <div class="featured-box featured-box-primary">
+                                <div class="box-content">
+                                    <i class="icon icon-circle"></i>
+                                    <h4>Recorder</h4>
+                                    <p>Enable your users to record videos from inside their browser.</p>
+                                    <p><a class="btn btn-primary" href="/tour/recorder" class="learn-more">Try it out! <i class="icon-angle-right"></i></a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span4">
+                            <div class="featured-box featured-box-secundary">
+                                <div class="box-content">
+                                    <i class="icon icon-arrow-up"></i>
+                                    <h4>Uploader</h4>
+                                    <p>Allow users to upload a video from their computer. You store the video ID. We'll deal with getting it into the right format.</p>
+                                    <p><a class="btn btn-primary" href="/tour/uploader" class="learn-more">Try it out! <i class="icon-angle-right"></i></a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span4">
+                            <div class="featured-box featured-box-tertiary">
+                                <div class="box-content">
+                                    <i class="icon icon-play"></i>
+                                    <h4>Player</h4>
+                                    <p> Play videos across all browsers and devices. No up-front setup. No long-term maintenance. Just one line.</p>
+                                    <p><a class="btn btn-primary" href="/tour/player" class="learn-more">Try it out! <i class="icon-angle-right"></i></a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="span4">
+                          <pre class="prettyprint lang-html" style='font-size: 12px'>
+&lt;input type="framebase" name="my_video" record="true"/&gt;
+            </pre>
+                        </div>
+                        <div class="span4">
+                          <pre class="prettyprint lang-html" style='font-size: 12px'>
+&lt;input type="framebase" name="my_video"/&gt;
+            </pre>
+                        </div>
+                        <div class="span4">
+                          <pre class="prettyprint lang-html" style='font-size: 12px'>
+&lt;video type="framebase" data-video="test"&gt;
+            </pre>
+            <div class='row'>
+                <div class='span3'><a href='docs'>Read the full docs <i class="icon-angle-right"></i></a></div>
+            </div>
+                        </div>
+                    </div>
+
+                            <hr class="tall" />
+
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="span8" style="margin: 0 auto;float:none">
+                                <h1 style="text-align:center">Framebase is <strong class="inverted">programmatic video</strong>.</h1>
+                                <p>
+                                    Writing applications which use video in a meaningful way is extremely difficult.
+                                    And then there's the maintenance.
+                                </p>
+                                <p>
+                                    Framebase makes video a first-class object. No need to hire a team to deal with
+                                    transcoding configurations, device compatibility bugs, or CDN contracts. With just
+                                    two lines of code, you can start treating videos as class instances. That means
+                                    playback as simple as an <tt>echo</tt>, and uploads as simple as an
+                                    <tt>&lt;input&gt;</tt>.
+                                </p>
+                                <p>
+                                    Your application is more than just video. Focus on your core competencies, and
+                                    let us make your video awesome. Together we'll make the world a little more
+                                    amazing.
+                                </p>
+                            </div>
+                        </div>
+
+                        <hr class="tall upsidedown" />
+                    </div>
+
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="span8 features">
+                                <h2>Our <strong>Features</strong></h2>
+                                <div class="row">
+
+                                    <div class="span4">
+                                        <strong><h4>For the <span>marketer</span> in you</h4></strong>
+                                        <div class="feature-box">
+                                            <div class="feature-box-icon">
+                                                <i class="icon-pencil"></i>
+                                            </div>
+                                            <div class="feature-box-info">
+                                                <h4 class="shorter">Fully Customizable</h4>
+                                                <p class="tall">Customize the look of the player with CSS.</p>
+                                            </div>
+                                        </div>
+                                        <div class="feature-box">
+                                            <div class="feature-box-icon">
+                                                <i class="icon-bar-chart"></i>
+                                            </div>
+                                            <div class="feature-box-info">
+                                                <h4 class="shorter">Analytics</h4>
+                                                <p class="tall">Connect Mixpanel or Google Analytics to receive powerful engagement metrics.</p>
+                                            </div>
+                                        </div>
+                                        <div class="feature-box">
+                                            <div class="feature-box-icon">
+                                                <i class="icon-bullhorn"></i>
+                                            </div>
+                                            <div class="feature-box-info">
+                                                <h4 class="shorter">CTA</h4>
+                                                <p class="tall">Capture leads with customizable CTAs shown at the end of your video.</p>
+                                            </div>
+                                        </div>
+                                        <div class="feature-box">
+                                            <div class="feature-box-icon">
+                                                <i class="icon-thumbs-up"></i>
+                                            </div>
+                                            <div class="feature-box-info">
+                                                <h4 class="shorter">Social Exports</h4>
+                                                <p class="tall">Upload once and send your videos to YouTube, Vimeo, and more.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span4">
+                                        <strong><h4>For the <span>developer</span> in you</h4></strong>
+
+                                        <div class="feature-box">
+                                            <div class="feature-box-icon">
+                                                <i class="icon-copy"></i>
+                                            </div>
+                                            <div class="feature-box-info">
+                                                <h4 class="shorter">Cross-Format</h4>
+                                                <p class="tall">Support uploads in every major file format without thinking.</p>
+                                            </div>
+                                        </div>
+                                        <div class="feature-box">
+                                            <div class="feature-box-icon">
+                                                <i class="icon-mobile-phone"></i>
+                                            </div>
+                                            <div class="feature-box-info">
+                                                <h4 class="shorter">Cross-Device</h4>
+                                                <p class="tall">Support and maintain video for all of your users with no extra work.</p>
+                                            </div>
+                                        </div>
+                                        <div class="feature-box">
+                                            <div class="feature-box-icon">
+                                                <i class="icon-cloud-download"></i>
+                                            </div>
+                                            <div class="feature-box-info">
+                                                <h4 class="shorter">Content Delivery &amp; Streaming</h4>
+                                                <p class="tall">Your videos are stored and streamed near your users for lower latency.</p>
+                                            </div>
+                                        </div>
+                                        <div class="feature-box">
+                                            <div class="feature-box-icon">
+                                                <i class="icon-bolt"></i>
+                                            </div>
+                                            <div class="feature-box-info">
+                                                <h4 class="shorter">Programmatic Video</h4>
+                                                <p class="tall">Customize every aspect of your integration, and do whatever you want with your videos with our developer-friendly APIs.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span4" style="margin-top:5.6em;">
+                                <a class="btn btn-block btn-primary" style="padding: .8em inherit" href="/docs/getting_started">Getting Started</a>
+                                <div class="btn-group" style="display:block;margin-top:5px;margin-bottom: 30px" >
+                                    <a class="btn" style="padding: .8em inherit;width:50%" href="/docs/js">JavaScript API</a>
+                                    <a class="btn" style="padding: .8em inherit;width:50%" href="/docs/rest">REST API</a>
+                                </div>
+
+
+                                <h5>Follow us on Twitter!</h5>
+                                <a href="https://twitter.com/framebase" class="twitter-follow-button" data-show-count="false">Follow @framebase</a></br>
+                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><p>We love hearing from you!</p>
+                                <h5>Sign up in seconds!</h5>
+                             <form action="/register/waitlist" method="get" class="form-inline">
+                                <div class="input-append">
+                                    <input class="span2" placeholder="Email Address" name="email" type="text">
+                                    <button type="submit" class="btn" type="button">Go!</button>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+
+                        <hr class="tall" />
+
+
+
+                    </div>
+                    </div>
+                </div>
+{% endblock %}

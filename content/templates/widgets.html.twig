@@ -1,0 +1,40 @@
+{% macro top(breadcrumbs, title = false) %}
+    {% set breadcrumbs = [{'name': 'Home', 'link': '/'}]|merge(breadcrumbs) %}
+    <section class="page-top">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <ul class="breadcrumb">
+                        {% for breadcrumb in breadcrumbs %}
+                                {% if not loop.last %}
+                                    <li>
+                                        {% if breadcrumb.link %}
+                                            <a href="{{ breadcrumb.link }}">{{ breadcrumb.name }}</a>
+                                        {% else %}
+                                            {{ breadcrumb.name }}
+                                        {% endif %}
+                                        <span class="divider">/</span>
+                                    </li>
+                                {% else %}
+                                    <li class="active">{{ breadcrumb.name }}</li>
+                                {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <h2>
+                        {% if title %}
+                            {{ title }}
+                        {% elseif block('title') %}
+                            {{ block('title') }}
+                        {% else %}
+                            {{ breadcrumbs[breadcrumbs|length - 1].name }}
+                        {% endif %}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endmacro %}

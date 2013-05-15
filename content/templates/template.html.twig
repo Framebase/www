@@ -1,0 +1,59 @@
+{% import '/templates/widgets.html.twig' as widgets %}
+<!DOCTYPE html>
+<!--[if IE 8]>          <html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>          <html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->  <html> <!--<![endif]-->
+    <head>
+        <title>
+            Framebase
+            {% if block('title') %}
+                | {{ block('title') }}
+            {% endif %}
+         </title>
+        {% include "/templates/head.html.twig" %}
+    </head>
+    <body>
+         <div class="body">
+            <header>
+                <div class="container">
+                        <a href="/">
+                            <img style="margin-top: 12px; height: 25px"alt="Framebase" src="/assets/img/logo.png">
+                        </a>
+                    </h1>
+                    <nav>
+                        <ul class="nav nav-pills nav-main" id="mainMenu" style="margin-top:8px;">
+                            <li>
+                                <a href="/about">About</a>
+                            </li>
+                            <li>
+                                <a href="/docs">Docs</a>
+                            </li>
+                            <li>
+                                <a href="/tour">Tour</a>
+                            </li>
+                            <li>
+                                <a href="/pricing">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="//dashboard.framebase.io/">Login</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            {% block content %}{% endblock %}
+        </div>
+        <footer>
+            {% include 'templates/footer.html.twig' %}
+        </footer>
+        {% include 'templates/scripts.html.twig' %}
+        {# User-defined Scripts #}
+        {% block scripts %}
+            <script type="text/javascript">
+                framebase_init({token: "7e2d397e7c52137284759831f0bf502fb0ba53865788a12e6759acd0ee39a5fd"});
+            </script>
+        {% endblock %}
+        {% block jsfiles %}{% endblock %}
+    </body>
+</html>
+

@@ -1,0 +1,6 @@
+[submodule ".submodules/CuteControllers"]
+	path = .submodules/CuteControllers
+	url = git@github.com:tylermenezes/CuteControllers.git
+[submodule ".submodules/Twig"]
+	path = .submodules/Twig
+	url = git@github.com:fabpot/Twig.git

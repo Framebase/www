@@ -1,0 +1,61 @@
+{% block title %}In browser Recorder{% endblock %}
+{% extends "templates/template.html.twig" %}
+
+{% block content %}
+    <div role="main" class="main">
+
+                <section class="page-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span12">
+                                <ul class="breadcrumb">
+                                    <li><a href="http://framebase.io">Home</a> <span class="divider">/</span></li>
+                                    <li class="active">Tour</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span12">
+                                <h2>Recorder</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="container">
+                    <ul class="nav nav-pills">
+                      <li class="active">
+                        <a href="#">Recorder</a>
+                      </li>
+                      <li><a href="uploader">Uploader</a></li>
+                      <li><a href="player">Player</a></li>
+                    </ul>
+
+                    <div class="row">
+                        <div class="span6">
+                        <div class='recorder' style='background:#FAFAFA; border: 1px solid #CCC; padding: 10px;  margin: 0 auto;'>
+                            <input type='framebase' record='true' />
+                        </div>
+
+
+                        </div>
+
+                        <div class="span6">
+
+                            <h4>Framebase <strong>Recorder</strong> (beta)</h4>
+                            <p>Our framebase recorder allows you to easily enable in browser recording on your website.
+                             </p>
+
+                            <a href="/uses" class="btn btn-primary">Check out some use cases</a> <span class="arrow hlb hidden-phone"></span>
+
+                            <h4 class="pull-top">Features</h4>
+
+                            <ul class="list icons">
+                                <li><i class="icon-ok"></i> CSS Skinnable</li>
+                                <li><i class="icon-ok"></i> Works on all browsers</li>
+                                <li><i class="icon-ok"></i> No record limit</li>
+                            </ul>
+
+                        </div>
+                    </div>
+{% endblock %}

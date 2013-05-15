@@ -1,0 +1,57 @@
+{% block title %}Easiest way to add video{% endblock %}
+{% extends "templates/template.html.twig" %}
+
+{% block content %}
+    <div class="container">
+<!--         <input type="framebase" name="my_cool_video" id="my_cool_video" />
+        <video type="framebase" data-video="test" data-controls='hideOnStart' width='400px'></video> -->
+        <img src='/assets/img/try-it.png' style='float:left; margin-left: 150px; margin-top: 120px;'/>
+        <div class='recorder' style='background:#FAFAFA; border: 1px solid #CCC; padding: 10px; width: 400px; margin: 0 auto;'>
+            <input type="framebase" name="video_rec" record="true" />
+        </div>
+     </div>
+ </br>
+    </body>
+
+{% endblock %}
+
+{% block scripts %}
+<!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,
+e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+mixpanel.init("65796b050a0d22c65f91fc702063984d");</script><!-- end Mixpanel -->
+
+<script type="text/javascript">
+        framebase_init({
+            token: "7e2d397e7c52137284759831f0bf502fb0ba53865788a12e6759acd0ee39a5fd",
+            events: {
+                upload: {
+                    success: function(e){
+                        var player = document.getElementById('mep_0');
+
+                        var video = document.createElement("video");
+                        video.setAttribute('type', 'framebase');
+                        video.setAttribute('data-video', e.videoID);
+                        player.parentNode.appendChild(video);
+
+                        player.parentNode.removeChild(player);
+                    }
+                },
+                video: {
+                    play: [
+                        function(){
+                        }
+                    ]
+                },
+                record: {
+                    success: function(e){
+                        // var video = $('<video type="framebase" id="xyz" data-video="'+ e.videoID + '" data-controls="hideOnStart" width="400px"></video>');
+                        // $('.recorder').append(video);
+                        mixpanel.track('record-save');
+                    }
+
+                }
+            }
+        });
+     </script>
+{% endblock %}

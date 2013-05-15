@@ -1,0 +1,64 @@
+{% block title %}HTML Uploader{% endblock %}
+{% extends "templates/template.html.twig" %}
+
+{% block content %}
+    <div role="main" class="main">
+
+                <section class="page-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span12">
+                                <ul class="breadcrumb">
+                                    <li><a href="http://framebase.io">Home</a> <span class="divider">/</span></li>
+                                    <li class="active">Tour</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span12">
+                                <h2>Uploader</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="container">
+                    <ul class="nav nav-pills">
+                      <li>
+                        <a href="recorder">Recorder</a>
+                      </li>
+                      <li  class="active"><a href="#">Uploader</a></li>
+                      <li><a href="player">Player</a></li>
+                    </ul>
+
+                    <div class="row">
+                        <div class="span6">
+                        <div class='recorder' style='background:#FAFAFA; border: 1px solid #CCC; padding: 10px;  margin: 0 auto;'>
+                            <input type='framebase' />
+                        </div>
+
+
+                        </div>
+
+                        <div class="span6">
+
+                            <h4>Framebase <strong>Uploader</strong></h4>
+                            <p>The framebase uploader takes a video file and we will handle the transcoding on our backend. When it's done, it'll return you a video id which you can store in your own database.
+                             </p>
+
+                            <a href="/uses" class="btn btn-primary">Check out some use cases</a> <span class="arrow hlb hidden-phone"></span>
+
+                            <h4 class="pull-top">Features</h4>
+
+                            <ul class="list icons">
+                                <li><i class="icon-ok"></i> CSS Skinnable</li>
+                                <li><i class="icon-ok"></i> Works on all browsers</li>
+                                <li><i class="icon-ok"></i> Transcoding</li>
+                                <li><i class="icon-ok"></i> Content Delivery</li>
+                                <li><i class="icon-ok"></i> Drag and drop</li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+{% endblock %}

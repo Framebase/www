@@ -1,0 +1,63 @@
+{% block title %}Record Tour{% endblock %}
+{% extends "templates/template.html.twig" %}
+{% block content %}
+<div class='container' >
+<div class='container' >
+<div style='text-align:center'>
+<h2>It's your own video backend</h2>
+<p>When you need something beyond just Vimeo and YouTube.</p>
+<div class="btn-group">
+ <button class="btn"><a href='/tour/playback'>Playback</a></button>
+  <button class="btn"><a href='/tour/upload'>Upload</a></button>
+  <button class="btn active"><a href=''>Record</a></button>
+</div>
+</div>
+</div>
+
+<div class="container marketing">
+
+<div class='container' style='width:460px'>
+  <hr>
+
+<div class='container'>
+       <div class='meh' style='float:left'>
+        <h2>Unlimited record time</h2>
+        <p>Allow your users to record videos for as long as they want, or customize your settings to let them record as long as you want. We won't cap you.
+        </p>
+    </div>
+    <div class='meh' style='float:left'>
+    </div>
+
+</div>
+<hr>
+<div class='container'>
+
+    <div class='meh' style='float:left; '>
+        <h2>Cross browser support</h2>
+        <p>Our recorder works on all browsers that support Adobe Flash.
+        </p>
+    </div>
+  <div class='meh' style='float:left'>
+     </div>
+</div>
+<hr>
+<div class='container'>
+    <div class='meh'  style="float:left">
+        <h2>Fully customizable</h2>
+        <p>
+			Don’t like the way the player looks and feels? Skin it however you like using CSS or choose between our offered skins.         </p>
+    </div>
+     <!-- <div class='meh' style="float:left">
+        <img src='assets/img/magic.png' />
+    </div> -->
+</div>
+<hr>
+</div>
+    <form method='post' action='/register/waitlist.html'>
+    <input type='text' name='email' placeholder='your@email.com' />
+    <button id='signup-btn' class="btn-new">Get an invite</button>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "templates/template.html.twig" %}
+
+{% block title %}{{ rendered_title }}{% endblock %}
+{% block content %}
+    <div role="main" class="main">
+                {{ widgets.top([
+                    {'name': 'Legal'}
+                ], rendered_title) }}
+        <div class="container">
+            {{ rendered | raw }}
+        </div>
+{% endblock %}
