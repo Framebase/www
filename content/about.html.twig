@@ -72,72 +72,52 @@
 
                     <div class="row">
                         <div class="span12">
-                            <ul class="people cards">
-                                <li>
-                                    <div class="cover" style="background-image:url(https://sphotos-a.xx.fbcdn.net/hphotos-snc7/417012_10151545793442977_1720262532_n.jpg)">
-                                        <h1>Vu Tran</h1>
-                                        <h2>CEO</h2>
-                                    </div>
-                                    <div class="thumb">
-                                        <img src="/assets/img/team/vu.png" alt="" />
-                                    </div>
-                                    <div class="info">
-                                        <div class="description">
-                                            <strong>Vu</strong> codes and does other stuff as well. He's responsible for
-                                            customer relations and support, and is the designer-in-residence.
-                                        </div>
-                                    </div>
-
-                                    <ul class="social">
-                                        <li><a href="mailto:vu@framebase.io"><i class="icon-envelope"></i></a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <div class="cover" style="background-image: url(https://sphotos-a.xx.fbcdn.net/hphotos-snc7/381771_10150489765334179_1306907556_n.jpg)">
-                                        <h1>Tyler Menezes</h1>
-                                        <h2>Architect</h2>
-                                    </div>
-                                    <div class="thumb">
-                                        <img src="/assets/img/team/tyler.png" alt="" />
-                                    </div>
-                                    <div class="info">
-                                        <div class="description">
-                                            <strong>Tyler</strong> also codes. He is responsible for most of the
-                                            architecture/design, scalibility, client dashboard, and SDKs. He also
-                                            handles support and occasional design work.
-                                        </div>
-                                    </div>
-
-                                    <ul class="social">
-                                        <li><a href="https://github.com/tylermenezes"><i class="icon-github"></i></a></li>
-                                        <li><a href="https://twitter.com/tylermenezes"><i class="icon-twitter"></i></a></li>
-                                        <li><a href="mailto:tylermenezes@framebase.io"><i class="icon-envelope"></i></a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <div class="cover" style="background-image:url(https://sphotos-b.xx.fbcdn.net/hphotos-prn1/324644_10150517809208958_444692898_o.jpg)">
-                                        <h1>Paul Cretu</h1>
-                                        <h2>Streaming Architect</h2>
-                                    </div>
-                                    <div class="thumb">
-                                        <img src="/assets/img/team/paul.png" alt="" />
-                                    </div>
-                                    <div class="info">
-                                        <div class="description">
-                                            Surprise! <strong>Paul</strong> codes too. He spends his days reading about
-                                            media formats, protocols, and packetizers. He writes the APIs which deal
-                                            with raw video manipulation.
-                                        </div>
-                                    </div>
-
-                                    <ul class="social">
-                                        <li><a href="https://github.com/paulcretu"><i class="icon-github"></i></a></li>
-                                        <li><a href="mailto:paulcretu@framebase.io"><i class="icon-envelope"></i></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            {{ widgets.about_people([
+                                {
+                                    'name': 'Vu Tran',
+                                    'title': 'CEO',
+                                    'picture': '/assets/img/team/vu.png',
+                                    'cover': 'https://sphotos-a.xx.fbcdn.net/hphotos-snc7/417012_10151545793442977_1720262532_n.jpg',
+                                    'description': "<strong>Vu</strong> codes and does other stuff as well. He's responsible for customer relations and support, and is the designer-in-residence.",
+                                    'social': {
+                                        'envelope': 'mailto:vu@framebase.io'
+                                    }
+                                },
+                                {
+                                    'name': 'Tyler Menezes',
+                                    'title': 'Architect',
+                                    'picture': '/assets/img/team/tyler.png',
+                                    'cover': 'https://sphotos-a.xx.fbcdn.net/hphotos-snc7/381771_10150489765334179_1306907556_n.jpg',
+                                    'description': "<strong>Tyler</strong> also codes. He is responsible for most of the architecture/design, scalibility, client dashboard, and SDKs. He also handles support and occasional design work.",
+                                    'social': {
+                                        'envelope': 'mailto:tylermenezes@framebase.io',
+                                        'github': 'https://github.com/tylermenezes',
+                                        'twitter': 'https://twitter.com/tylermenezes'
+                                    }
+                                },
+                                {
+                                    'name': 'Paul Cretu',
+                                    'title': 'Streaming Architect',
+                                    'picture': '/assets/img/team/paul.png',
+                                    'cover': 'https://sphotos-b.xx.fbcdn.net/hphotos-prn1/324644_10150517809208958_444692898_o.jpg',
+                                    'description': "Surprise! <strong>Paul</strong> codes too. He spends his days reading about media formats, protocols, and packetizers. He writes the APIs which deal with raw video manipulation.",
+                                    'social': {
+                                        'envelope': 'mailto:paul@framebase.io',
+                                        'github': 'https://github.com/paulcretu'
+                                    }
+                                },
+                                {
+                                    'name': 'Danish Mughal',
+                                    'title': 'Intern',
+                                    'picture': 'https://secure.gravatar.com/avatar/f6bb39a3aa18fa49aaa5b861a311a189?s=88',
+                                    'cover': '',
+                                    'description': "<strong>Danish</strong> is an engineering intern over the summer.",
+                                    'social': {
+                                        'envelope': 'mailto:danish@framebase.io',
+                                        'github': 'http://github.com/danishmughal'
+                                    }
+                                }
+                            ]) }}
 
                         </div>
                     </div>

@@ -1,4 +1,7 @@
-# Javascript Library
+---
+Title: Javascript Library
+Meta: Fuck meta
+---
 
 The Javascript Library allows you to quickly add Framebase to your web-based application.
 

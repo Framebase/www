@@ -1,4 +1,6 @@
-# Upload API
+---
+Title: Upload API
+---
 
 The Upload API is a very simple way to add cross-application support for video features.
 

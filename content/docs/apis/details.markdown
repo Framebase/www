@@ -1,4 +1,6 @@
-# Details API
+---
+Title: Details API
+---
 
 The Details API is a very simple way to play back videos in any application.
 

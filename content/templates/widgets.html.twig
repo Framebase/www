@@ -38,3 +38,29 @@
         </div>
     </section>
 {% endmacro %}
+
+
+{% macro about_people(people) %}
+    <ul class="people cards">
+        {% for person in people %}
+            <li>
+                <div class="cover" style="background-image:url({{ person.cover }})">
+                    <h1>{{ person.name }}</h1>
+                    <h2>{{ person.title }}</h2>
+                </div>
+                <div class="thumb">
+                    <img src="{{ person.picture }}" alt="" />
+                </div>
+                <div class="info">
+                    <div class="description">{{ person.description | raw }}</div>
+                </div>
+
+                <ul class="social">
+                    {% for account,link in person.social %}
+                        <li><a href="{{ link }}" target="_blank"><i class="icon-{{ account }}"></i></a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}

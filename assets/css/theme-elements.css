@@ -1386,6 +1386,7 @@ ul.people.cards > li {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
+    margin-bottom: 6px;
 }
 
 ul.people.cards li div.cover > * {

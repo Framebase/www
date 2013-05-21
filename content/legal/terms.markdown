@@ -1,4 +1,6 @@
-# Terms and Conditions of Service (TACOS)
+---
+Title: Terms and Conditions of Service (TACOS)
+---
 
 Last updated March 4, 2013.
 

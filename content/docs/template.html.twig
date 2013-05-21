@@ -1,11 +1,11 @@
 {% extends '/templates/template.html.twig' %}
 
-{% block title %}{{ rendered_title }}{% endblock %}
+{% block title %}{{ info.title }}{% endblock %}
 {% block content %}
    <div role="main" class="main">
                 {{ widgets.top([
                     {'name': 'For Developers', 'link': '/docs'},
-                    {'name': rendered_title}
+                    {'name': info.title}
                 ]) }}
                 <div class="container">
                     <div class="row">

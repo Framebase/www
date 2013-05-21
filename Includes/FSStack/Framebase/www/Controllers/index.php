@@ -1,5 +1,7 @@
 <?php
 
+use \FSStack\Framebase\www\Renderers;
+
 define('CONTENT_DIR', implode('/', ['', 'var', 'www', 'content']));
 class main_controller
 {
@@ -28,113 +30,91 @@ class main_controller
 
     private function process_request($path)
     {
-        $real_path = implode('/', [CONTENT_DIR, $path]);
+        $file_path = $this->get_file_path($path);
+        $ext = pathinfo($file_path, PATHINFO_EXTENSION);
 
-        // Set up the format processors
+        if ($ext === 'twig') {
+            $x = substr($file_path, strlen(CONTENT_DIR));
+            return $this->twig->render($x, [
+                'path' => $path,
+                'full_path' => $file_path
+            ]);
+        } else {
+            $renderer = $this->get_renderer($path);
+            $template = $this->get_template_url($path);
 
-        $twig_render_inline = function($html, $relative)
-        {
-            $parts = explode('/', $relative);
-            $template = 'templates/rendered.html.twig';
-            while(count($parts) > 0) {
-                array_pop($parts);
-                array_push($parts, 'template.html.twig');
-                $pass_tpl_path = implode('/', $parts);
-                $check_tpl_path = implode('/', [CONTENT_DIR, $pass_tpl_path]);
-                if (file_exists($check_tpl_path)) {
-                    $template = $pass_tpl_path;
-                    $parts = [];
-                }
-                array_pop($parts);
-            }
+            $rendered = $renderer->render();
+            $file_info = $renderer->get_info();
 
-            $full_html = $html;
-
-            $rendered_title = null;
-            if (substr(ltrim($html), 0, 4) === '<h1>') {
-                $trimmed_html = ltrim($html);
-                $rendered_title = substr($trimmed_html, 4, strpos($trimmed_html, '</h1>') - 4);
-                $html = substr($html, strpos($html, '</h1>') + 5);
-            }
-
-            return $this->twig->render(
-                $template,
-                [
-                    'path' => $relative,
-                    'rendered' => $html,
-                    'full_rendered' => $full_html,
-                    'rendered_title' => $rendered_title
-                ]
-            );
-        };
-
-        $process_raw = function($file, $ext, $relative)
-        {
-            if ($ext === 'txt') {
-                header('Content-type: text/plain');
-            }
-            return file_get_contents($file);
-        };
-        $process_semiraw = function($file, $ext, $relative) use ($twig_render_inline)
-        {
-            $html = file_get_contents($file);
-            return $twig_render_inline($html, $relative);
-        };
-        $process_twig = function($file, $ext, $relative)
-        {
-            $ext_parts = explode('.', $ext);
-            $relevant_ext = $ext_parts[0];
-            if ($relevant_ext === 'txt') {
-                header('Content-type: text/plain');
-            }
-            return $this->twig->render(
-                implode('.', [$relative, $ext]),
-                [
-                    'path' => $relative
-                ]
-            );
-        };
-        $process_markdown = function($file, $ext, $relative) use ($twig_render_inline)
-        {
-            $html = \Michelf\MarkdownExtra::defaultTransform(file_get_contents($file));
-            return $twig_render_inline($html, $relative);
-        };
-
-        // Format ordering
-        $format_processors = [
-            [
-                'extensions' => ['txt', 'htm'],
-                'processor' => $process_raw
-            ],
-            [
-                'extensions' => ['html'],
-                'processor' => $process_semiraw
-            ],
-            [
-                'extensions' => ['markdown', 'md'],
-                'processor' => $process_markdown
-            ],
-            [
-                'extensions' => ['html.twig', 'txt.twig', 'twig'],
-                'processor' => $process_twig
-            ]
-        ];
-
-
-        foreach ($format_processors as $processor) {
-            foreach ($processor['extensions'] as $ext) {
-                $full_path = implode('.', [$real_path, $ext]);
-                if (file_exists($full_path)) {
-                    return call_user_func_array($processor['processor'], [$full_path, $ext, $path]);
-                } else {
-                    $full_path = implode('.', [$real_path . '/index', $ext]);
-                    if (file_exists($full_path)) {
-                        return call_user_func_array($processor['processor'], [$full_path, $ext, $path . '/index']);
-                    }
-                }
-            }
+            return $this->twig->render($template, [
+                'path' => $path,
+                'full_path' => $file_path,
+                'rendered' => $rendered,
+                'info' => $file_info
+            ]);
         }
 
         throw new \CuteControllers\HttpError(404);
+    }
+
+    public function get_template_url($relative_path)
+    {
+        $parts = explode('/', $relative_path);
+        if ($parts[count($parts) - 1] !== '') {
+            $parts[] = '';
+        }
+        $template = 'templates/rendered.html.twig';
+        while(count($parts) > 0) {
+            array_pop($parts);
+            array_push($parts, 'template.html.twig');
+            $pass_tpl_path = implode('/', $parts);
+            $check_tpl_path = implode('/', [CONTENT_DIR, $pass_tpl_path]);
+            if (file_exists($check_tpl_path)) {
+                $template = $pass_tpl_path;
+                $parts = [];
+            }
+            array_pop($parts);
+        }
+
+        return $template;
+    }
+
+    protected $processors = [
+        'Markdown' => ['md', 'markdown'],
+        'Raw' => ['htm', 'html', 'txt']
+    ];
+
+    public function get_file_path($relative_path)
+    {
+        $real_path = implode('/', [CONTENT_DIR, $relative_path]);
+        $extensions = ['md', 'markdown', 'html', 'htm', 'txt', 'html.twig'];
+
+        foreach ($extensions as $ext) {
+            $test_full_path = implode('.', [$real_path, $ext]);
+
+            if (file_exists($test_full_path)) {
+                return $test_full_path;
+            } else {
+                $test_full_path = implode('.', [$real_path . '/index', $ext]);
+                if (file_exists($test_full_path)) {
+                    return $test_full_path;
+                }
+            }
+        }
+    }
+
+    public function get_renderer($relative_path)
+    {
+        $file_path = $this->get_file_path($relative_path);
+        $ext = pathinfo($file_path, PATHINFO_EXTENSION);
+
+        foreach ($this->processors as $processor=>$exts) {
+            if (in_array($ext, $exts)) {
+                $class = "\\FSStack\\Framebase\\www\\Renderers\\$processor";
+                return new $class($file_path, $relative_path, $ext);
+            }
+        }
+
+        throw new \Exception("Processor not found.");
     }
 }
