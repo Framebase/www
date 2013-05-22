@@ -6,15 +6,29 @@ class assets_controller
 {
     use \CuteControllers\Base\Rest;
 
-    public function __get_framebase_js($file)
+    public function __get_framebase_js()
     {
-        if ($file === 'framebase') {
+        $file = substr($this->routing_information->unmatched_path, strlen('framebase-js/'));
+        $ext = substr($this->request->path, strrpos($this->request->path, '.') + 1);
+
+        if ($file === 'framebase' || strpos($file, '/') !== false) {
             header('Expires: ' . gmdate('D, d M Y H:i:s \G\M\T', time() + 3600));
             header("Cache-control: public, max-age=3600, must-revalidate");
         }
 
-        header("Content-type: text/javascript");
-        echo file_get_contents('http://js.fss.int/' . $file . '.js');
+        $content_types = [
+            'js' => 'text/javascript',
+            'png' => 'image/png',
+            'jpg' => 'image/jpg',
+            'gif' => 'image/gif',
+            'css' => 'text/css'
+        ];
+
+        if (array_key_exists($ext, $content_types)) {
+            header("Content-type: " . $content_types[$ext]);
+        }
+
+        echo file_get_contents('http://js.fss.int/' . $file);
     }
 
     public function __get_css()
