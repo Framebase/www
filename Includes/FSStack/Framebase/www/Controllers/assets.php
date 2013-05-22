@@ -8,8 +8,13 @@ class assets_controller
 
     public function __get_framebase_js($file)
     {
-        // TODO
-        print_r(get_headers('https://framebase.io/framebase-js/' . $file . '.js'));
+        if ($file === 'framebase') {
+            header('Expires: ' . gmdate('D, d M Y H:i:s \G\M\T', time() + 3600));
+            header("Cache-control: public, max-age=3600, must-revalidate");
+        }
+
+        header("Content-type: text/javascript");
+        echo file_get_contents('http://js.fss.int/' . $file . '.js');
     }
 
     public function __get_css()

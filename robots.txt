@@ -1,0 +1,3 @@
+Sitemap: https://www.framebase.io/sitemap.xml
+
+User-agent: *

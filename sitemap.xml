@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://framebase.io/</loc>
+</url>
+<url>
+  <loc>https://framebase.io/about</loc>
+</url>
+<url>
+  <loc>https://framebase.io/docs</loc>
+</url>
+<url>
+  <loc>https://framebase.io/tour</loc>
+</url>
+<url>
+  <loc>https://framebase.io/pricing</loc>
+</url>
+<url>
+  <loc>https://framebase.io/tour/recorder</loc>
+</url>
+<url>
+  <loc>https://framebase.io/tour/uploader</loc>
+</url>
+<url>
+  <loc>https://framebase.io/tour/player</loc>
+</url>
+<url>
+  <loc>https://framebase.io/docs/getting_started</loc>
+</url>
+<url>
+  <loc>https://framebase.io/docs/js</loc>
+</url>
+<url>
+  <loc>https://framebase.io/docs/rest</loc>
+</url>
+<url>
+  <loc>https://framebase.io/jobs</loc>
+</url>
+<url>
+  <loc>https://framebase.io/register</loc>
+</url>
+<url>
+  <loc>https://framebase.io/uses</loc>
+</url>
+<url>
+  <loc>https://framebase.io/uses/video-messages</loc>
+</url>
+<url>
+  <loc>https://framebase.io/uses/video-marketing</loc>
+</url>
+</urlset>

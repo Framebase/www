@@ -1,0 +1,19 @@
+/* TEAM */
+    Vu Tran
+        "The Pilot"
+        @vu0tran
+        vu0tran.com
+
+    Tyler Menezes
+        "In An Alligator"
+        @tylermenezes
+        tyler.menez.es
+
+    Paul Cretu
+        "The Conductor"
+        vel.ociraptor.com
+
+/* SITE */
+  Standards: HTML5, CSS4
+  Components: jQuery, Orbit, Reveal
+  Software: WinSCP, Sublime Text, Git, Photoshop
